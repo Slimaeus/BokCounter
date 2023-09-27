@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MassTransit" Version="8.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\BokCounter.Users.Shared.Domain\BokCounter.Users.Shared.Domain.csproj" />
+    <ProjectReference Include="..\BokCounter.Users.Query.Persistence\BokCounter.Users.Query.Persistence.csproj" />
+  </ItemGroup>
+
+</Project>
