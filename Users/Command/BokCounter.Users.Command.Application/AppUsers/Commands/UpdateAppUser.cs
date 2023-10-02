@@ -11,7 +11,7 @@ namespace BokCounter.Users.Command.Application.AppUsers.Commands;
 public static class UpdateAppUser
 {
     public sealed record Command(AppUserId Id, AppIdentityUserId AppIdentityUserId) : IRequest<Unit>;
-    public sealed record Request(AppUserId Id);
+    public sealed record Request(AppUserId Id, AppIdentityUserId AppIdentityUserId);
     public sealed class Handler : IRequestHandler<Command, Unit>
     {
         private readonly IMongoDbContext _mongoDbContext;
