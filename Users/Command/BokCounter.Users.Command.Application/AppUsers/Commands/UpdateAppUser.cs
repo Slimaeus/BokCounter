@@ -36,7 +36,7 @@ public static class UpdateAppUser
             await _mongoDbContext.AppUserUpdatedEvents
                 .InsertOneAsync(@event, new InsertOneOptions(), cancellationToken);
 
-            await _publishEndpoint.Publish(@event);
+            await _publishEndpoint.Publish(@event).ConfigureAwait(false);
 
             return Unit.Value;
         }

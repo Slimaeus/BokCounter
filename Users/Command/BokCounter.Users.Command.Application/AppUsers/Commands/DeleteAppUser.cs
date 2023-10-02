@@ -32,7 +32,7 @@ public static class DeleteAppUser
             await _mongoDbContext.AppUserDeletedEvents
                 .InsertOneAsync(@event, new InsertOneOptions(), cancellationToken);
 
-            await _publishEndpoint.Publish(@event);
+            await _publishEndpoint.Publish(@event).ConfigureAwait(false);
 
             return Unit.Value;
         }

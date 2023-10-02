@@ -36,7 +36,7 @@ public static class CreateAppUser
             await _mongoDbContext.AppUserCreatedEvents
                 .InsertOneAsync(@event, new InsertOneOptions(), cancellationToken);
 
-            await _publishEndpoint.Publish(@event);
+            await _publishEndpoint.Publish(@event).ConfigureAwait(false);
 
             return appUser.Id;
         }
