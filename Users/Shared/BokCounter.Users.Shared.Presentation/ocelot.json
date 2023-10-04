@@ -10,7 +10,61 @@
         }
       ],
       "UpstreamPathTemplate": "/api/v1/Users",
-      "UpstreamHttpMethod": [ "GET" ]
+      "UpstreamHttpMethod": [ "GET" ],
+      "FileCacheOptions": {
+        "TtlSeconds": 15,
+        "Region": "somename"
+      },
+      "QoSOptions": {
+        "ExceptionsAllowedBeforeBreaking": 2,
+        "DurationOfBreak": 5000,
+        "TimeoutValue": 2000
+      },
+      "SwaggerKey": "userQuery"
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/Users",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7259
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v1/Users",
+      "UpstreamHttpMethod": [ "POST" ],
+      "FileCacheOptions": {
+        "TtlSeconds": 15,
+        "Region": "somename"
+      },
+      "QoSOptions": {
+        "ExceptionsAllowedBeforeBreaking": 2,
+        "DurationOfBreak": 5000,
+        "TimeoutValue": 2000
+      },
+      "SwaggerKey": "userCommand"
+    }
+  ],
+  "SwaggerEndpoints": [
+    {
+      "Key": "userQuery",
+      "Config": [
+        {
+          "Name": "User API",
+          "Version": "v1",
+          "Url": "https://localhost:7097/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "userCommand",
+      "Config": [
+        {
+          "Name": "User API",
+          "Version": "v1",
+          "Url": "https://localhost:7259/swagger/v1/swagger.json"
+        }
+      ]
     }
   ],
   "GlobalConfiguration": {

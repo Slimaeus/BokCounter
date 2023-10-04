@@ -1,7 +1,9 @@
 ﻿using Carter;
 using Microsoft.OpenApi.Models;
+using Ocelot.Cache.CacheManager;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
+using Ocelot.Provider.Polly;
 using System.Text;
 
 namespace BokCounter.Users.Shared.Presentation.Configurations;
@@ -17,8 +19,14 @@ public static partial class ConfigureServices
         // Add services to the container.
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         services.AddEndpointsApiExplorer();
-        services.AddOcelot(ocelotConfiguration);
-        //services.AddSwaggerForOcelot(configuration);
+        services
+            .AddOcelot(ocelotConfiguration)
+            .AddCacheManager(x =>
+            {
+                x.WithDictionaryHandle();
+            })
+            .AddPolly();
+        services.AddSwaggerForOcelot(ocelotConfiguration);
         services.AddSwaggerGen(options =>
         {
             var securitySchema = new OpenApiSecurityScheme
@@ -53,13 +61,13 @@ public static partial class ConfigureServices
     public static WebApplication UsePresentationServices(this WebApplication app)
     {
         app.UseSwagger();
-        app.UseSwaggerUI(options =>
-        {
-            options.SwaggerEndpoint("/swagger/v1/swagger.json", "V1");
-            options.InjectStylesheet("/swagger/custom.css");
-            options.EnableTryItOutByDefault();
-        });
-        //app.UseSwaggerForOcelotUI();
+        //app.UseSwaggerUI(options =>
+        //{
+        //    options.SwaggerEndpoint("/swagger/v1/swagger.json", "V1");
+        //    options.InjectStylesheet("/swagger/custom.css");
+        //    options.EnableTryItOutByDefault();
+        //});
+        app.UseSwaggerForOcelotUI();
 
         const string CustomStyles = @"
             .swagger-ui .opblock .opblock-summary .view-line-link {
