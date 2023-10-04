@@ -9,25 +9,27 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Query", "Query", "{47E9854A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Command", "Command", "{1E11B093-DB0E-4216-ACB4-4E42C2B84E6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BokCounter.Users.Command.Application", "Users\Command\BokCounter.Users.Command.Application\BokCounter.Users.Command.Application.csproj", "{974AAA6A-B7CD-49D0-A6D9-3AFDEDAA2028}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BokCounter.Users.Command.Application", "Users\Command\BokCounter.Users.Command.Application\BokCounter.Users.Command.Application.csproj", "{974AAA6A-B7CD-49D0-A6D9-3AFDEDAA2028}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BokCounter.Users.Command.Persistence", "Users\Command\BokCounter.Users.Command.Persistence\BokCounter.Users.Command.Persistence.csproj", "{61C4052B-92A1-4EC0-9A2E-D8D999D44F54}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BokCounter.Users.Command.Persistence", "Users\Command\BokCounter.Users.Command.Persistence\BokCounter.Users.Command.Persistence.csproj", "{61C4052B-92A1-4EC0-9A2E-D8D999D44F54}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BokCounter.Users.Command.Infrastructure", "Users\Command\BokCounter.Users.Command.Infrastructure\BokCounter.Users.Command.Infrastructure.csproj", "{2BBBBDA7-A6CD-40ED-9203-358F4EB5AE8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BokCounter.Users.Command.Infrastructure", "Users\Command\BokCounter.Users.Command.Infrastructure\BokCounter.Users.Command.Infrastructure.csproj", "{2BBBBDA7-A6CD-40ED-9203-358F4EB5AE8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BokCounter.Users.Command.Presentation", "Users\Command\BokCounter.Users.Command.Presentation\BokCounter.Users.Command.Presentation.csproj", "{ED205465-1383-4557-95D3-69F1736F2060}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BokCounter.Users.Command.Presentation", "Users\Command\BokCounter.Users.Command.Presentation\BokCounter.Users.Command.Presentation.csproj", "{ED205465-1383-4557-95D3-69F1736F2060}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BokCounter.Users.Query.Presentation", "Users\Query\BokCounter.Users.Query.Presentation\BokCounter.Users.Query.Presentation.csproj", "{90700A8A-3D2C-4402-8E94-910FB607A850}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BokCounter.Users.Query.Presentation", "Users\Query\BokCounter.Users.Query.Presentation\BokCounter.Users.Query.Presentation.csproj", "{90700A8A-3D2C-4402-8E94-910FB607A850}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BokCounter.Users.Query.Infrastructure", "Users\Query\BokCounter.Users.Query.Infrastructure\BokCounter.Users.Query.Infrastructure.csproj", "{63C7622B-F109-486C-AF5D-666B40F5E783}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BokCounter.Users.Query.Infrastructure", "Users\Query\BokCounter.Users.Query.Infrastructure\BokCounter.Users.Query.Infrastructure.csproj", "{63C7622B-F109-486C-AF5D-666B40F5E783}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BokCounter.Users.Query.Application", "Users\Query\BokCounter.Users.Query.Application\BokCounter.Users.Query.Application.csproj", "{E2AB11E9-D262-4304-8938-C5B6D5277956}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BokCounter.Users.Query.Application", "Users\Query\BokCounter.Users.Query.Application\BokCounter.Users.Query.Application.csproj", "{E2AB11E9-D262-4304-8938-C5B6D5277956}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BokCounter.Users.Query.Persistence", "Users\Query\BokCounter.Users.Query.Persistence\BokCounter.Users.Query.Persistence.csproj", "{D62C434C-255D-4808-B1E6-48A8E969A590}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BokCounter.Users.Query.Persistence", "Users\Query\BokCounter.Users.Query.Persistence\BokCounter.Users.Query.Persistence.csproj", "{D62C434C-255D-4808-B1E6-48A8E969A590}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{DD2FB15E-49FB-40E8-A65B-925107FF1955}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BokCounter.Users.Shared.Domain", "Users\Shared\BokCounter.Users.Shared.Domain\BokCounter.Users.Shared.Domain.csproj", "{04DD7B01-BC30-4147-8D9C-2FF6AE0F1369}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BokCounter.Users.Shared.Domain", "Users\Shared\BokCounter.Users.Shared.Domain\BokCounter.Users.Shared.Domain.csproj", "{04DD7B01-BC30-4147-8D9C-2FF6AE0F1369}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BokCounter.Users.Shared.Presentation", "Users\Shared\BokCounter.Users.Shared.Presentation\BokCounter.Users.Shared.Presentation.csproj", "{73A1E429-0F0E-4268-AC87-384961AF15AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,6 +73,10 @@ Global
 		{04DD7B01-BC30-4147-8D9C-2FF6AE0F1369}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04DD7B01-BC30-4147-8D9C-2FF6AE0F1369}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04DD7B01-BC30-4147-8D9C-2FF6AE0F1369}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73A1E429-0F0E-4268-AC87-384961AF15AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73A1E429-0F0E-4268-AC87-384961AF15AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73A1E429-0F0E-4268-AC87-384961AF15AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73A1E429-0F0E-4268-AC87-384961AF15AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -88,6 +94,7 @@ Global
 		{D62C434C-255D-4808-B1E6-48A8E969A590} = {47E9854A-E550-48B7-AD32-EDEA1E81CE92}
 		{DD2FB15E-49FB-40E8-A65B-925107FF1955} = {460CBFAD-458D-4A19-927D-36AA272A6793}
 		{04DD7B01-BC30-4147-8D9C-2FF6AE0F1369} = {DD2FB15E-49FB-40E8-A65B-925107FF1955}
+		{73A1E429-0F0E-4268-AC87-384961AF15AA} = {DD2FB15E-49FB-40E8-A65B-925107FF1955}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E4445A76-C656-42FA-8C6E-33559415393C}
