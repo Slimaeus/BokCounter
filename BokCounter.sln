@@ -29,7 +29,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{DD2FB1
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BokCounter.Users.Shared.Domain", "Users\Shared\BokCounter.Users.Shared.Domain\BokCounter.Users.Shared.Domain.csproj", "{04DD7B01-BC30-4147-8D9C-2FF6AE0F1369}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BokCounter.Users.Shared.Presentation", "Users\Shared\BokCounter.Users.Shared.Presentation\BokCounter.Users.Shared.Presentation.csproj", "{73A1E429-0F0E-4268-AC87-384961AF15AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BokCounter.Users.Shared.Presentation", "Users\Shared\BokCounter.Users.Shared.Presentation\BokCounter.Users.Shared.Presentation.csproj", "{73A1E429-0F0E-4268-AC87-384961AF15AA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "Identity", "{32F2F48B-F07F-44A4-94EF-D6BE443FC1B3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
