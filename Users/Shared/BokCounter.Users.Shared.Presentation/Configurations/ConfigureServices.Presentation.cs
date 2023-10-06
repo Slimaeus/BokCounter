@@ -1,9 +1,5 @@
 ﻿using Carter;
 using Microsoft.OpenApi.Models;
-using Ocelot.Cache.CacheManager;
-using Ocelot.DependencyInjection;
-using Ocelot.Middleware;
-using Ocelot.Provider.Polly;
 using System.Text;
 
 namespace BokCounter.Users.Shared.Presentation.Configurations;
@@ -12,21 +8,18 @@ public static partial class ConfigureServices
 {
     public static IServiceCollection AddPresentationServices(this IServiceCollection services, IConfiguration configuration)
     {
-        var ocelotConfiguration = new ConfigurationBuilder()
-            .AddJsonFile("ocelot.json")
-            .Build();
-
         // Add services to the container.
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         services.AddEndpointsApiExplorer();
-        services
-            .AddOcelot(ocelotConfiguration)
-            .AddCacheManager(x =>
-            {
-                x.WithDictionaryHandle();
-            })
-            .AddPolly();
-        services.AddSwaggerForOcelot(ocelotConfiguration);
+
+        services.AddHttpClient("CommandUsers", options =>
+        {
+            options.BaseAddress = new Uri("https://localhost:7259/");
+        });
+        services.AddHttpClient("QueryUsers", options =>
+        {
+            options.BaseAddress = new Uri("https://localhost:7097/");
+        });
         services.AddSwaggerGen(options =>
         {
             var securitySchema = new OpenApiSecurityScheme
@@ -61,13 +54,12 @@ public static partial class ConfigureServices
     public static WebApplication UsePresentationServices(this WebApplication app)
     {
         app.UseSwagger();
-        //app.UseSwaggerUI(options =>
-        //{
-        //    options.SwaggerEndpoint("/swagger/v1/swagger.json", "V1");
-        //    options.InjectStylesheet("/swagger/custom.css");
-        //    options.EnableTryItOutByDefault();
-        //});
-        app.UseSwaggerForOcelotUI();
+        app.UseSwaggerUI(options =>
+        {
+            options.SwaggerEndpoint("/swagger/v1/swagger.json", "V1");
+            options.InjectStylesheet("/swagger/custom.css");
+            options.EnableTryItOutByDefault();
+        });
 
         const string CustomStyles = @"
             .swagger-ui .opblock .opblock-summary .view-line-link {
@@ -80,8 +72,6 @@ public static partial class ConfigureServices
         app.MapCarter();
 
         app.UseHttpsRedirection();
-
-        app.UseOcelot();
 
         return app;
     }

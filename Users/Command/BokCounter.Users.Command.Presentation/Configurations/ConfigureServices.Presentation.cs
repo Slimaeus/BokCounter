@@ -1,6 +1,8 @@
 ﻿using Carter;
+using Microsoft.AspNetCore.Http.Json;
 using Microsoft.OpenApi.Models;
 using System.Text;
+using System.Text.Json;
 
 namespace BokCounter.Users.Presentation.Configurations;
 
@@ -37,6 +39,11 @@ public static partial class ConfigureServices
             options.AddSecurityRequirement(securityRequirement);
 
             options.CustomSchemaIds(type => type.FullName!.Replace("+", "."));
+        });
+
+        services.Configure<JsonOptions>(options =>
+        {
+            options.SerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
         });
 
         services.AddCarter();

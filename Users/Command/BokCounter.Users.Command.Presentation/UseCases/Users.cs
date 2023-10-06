@@ -26,16 +26,24 @@ public class Users : ICarterModule
                 IMapper mapper,
                 Guid id,
                 UpdateAppUser.Request request)
-            => TypedResults.Ok(
-                    await sender.Send(
-                        mapper.Map<UpdateAppUser.Command>(request))));
+            =>
+        {
+
+            await sender.Send(
+                mapper.Map<UpdateAppUser.Command>(request));
+            return TypedResults.NoContent();
+        });
 
         group.MapDelete("{id:guid}", async (
                 ISender sender,
                 IMapper mapper,
                 Guid id)
-            => TypedResults.Ok(
-                    await sender.Send(
-                        new DeleteAppUser.Command(new AppUserId(id)))));
+            =>
+        {
+            await sender.Send(
+                    new DeleteAppUser.Command(new AppUserId(id)));
+            return TypedResults.NoContent(
+                );
+        });
     }
 }
