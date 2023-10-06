@@ -26,9 +26,8 @@ public class Users : ICarterModule
                 IMapper mapper,
                 Guid id,
                 UpdateAppUser.Request request)
-            =>
+                =>
         {
-
             await sender.Send(
                 mapper.Map<UpdateAppUser.Command>(request));
             return TypedResults.NoContent();
@@ -38,12 +37,11 @@ public class Users : ICarterModule
                 ISender sender,
                 IMapper mapper,
                 Guid id)
-            =>
+                =>
         {
             await sender.Send(
-                    new DeleteAppUser.Command(new AppUserId(id)));
-            return TypedResults.NoContent(
-                );
+                new DeleteAppUser.Command(new AppUserId(id)));
+            return TypedResults.NoContent();
         });
     }
 }

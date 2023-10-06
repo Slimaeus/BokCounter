@@ -3,7 +3,6 @@ using BokCounter.Users.Shared.Domain.Entities;
 using BokCounter.Users.Shared.Domain.Events;
 using MassTransit;
 using MediatR;
-using MongoDB.Driver;
 
 namespace BokCounter.Users.Command.Application.AppUsers.Commands;
 
@@ -30,7 +29,7 @@ public static class DeleteAppUser
             };
 
             await _mongoDbContext.AppUserDeletedEvents
-                .InsertOneAsync(@event, new InsertOneOptions(), cancellationToken);
+                .InsertOneAsync(@event, cancellationToken: cancellationToken);
 
             await _publishEndpoint.Publish(@event).ConfigureAwait(false);
 
