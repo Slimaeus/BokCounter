@@ -29,10 +29,10 @@ public class Users : ICarterModule
         });
         return TypedResults.Ok(users);
     }
-    private static async Task<Ok<AppUserId>> Create(IHttpClientFactory httpClientFactory)
+    private static async Task<Ok<AppUserId>> Create(IHttpClientFactory httpClientFactory, CreateAppUser.Request request)
     {
         var client = httpClientFactory.CreateClient("CommandUsers");
-        var result = await client.PostAsJsonAsync("api/v1/Users", new { });
+        var result = await client.PostAsJsonAsync("api/v1/Users", request);
         var content = await result.Content.ReadAsStringAsync();
         var userId = JsonSerializer.Deserialize<AppUserId>(content, new JsonSerializerOptions
         {
